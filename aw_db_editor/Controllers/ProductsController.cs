@@ -13,14 +13,17 @@ namespace aw_db_editor.Controllers
     /// <summary>
     /// Products controller
     /// </summary>
+    [RoutePrefix("api")]
     public class ProductsController : Controller
     {
         private AdventureWorksEntities db = new AdventureWorksEntities();
 
         // GET: Products
+        [HttpGet]
+        [Route("index")]
         public ActionResult Index()
         {
-            Logger.Current.Error("Log error test!");
+            Logger.Current.Error("Log error test!!!");
 
             var product = db.Product.Include(p => p.ProductModel).Include(p => p.ProductSubcategory).Include(p => p.UnitMeasure).Include(p => p.UnitMeasure1).Include(p => p.ProductDocument);
             return View(product.ToList());

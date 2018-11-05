@@ -19,7 +19,7 @@ namespace aw_db_editor
 
         public static void InitLogger()
         {
-            XmlConfigurator.Configure();
+            //XmlConfigurator.Configure(ConfigFile = "log4net.config");
         }
     }
 }
